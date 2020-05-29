@@ -1,8 +1,28 @@
-import Vue from 'vue'
-import App from './App.vue'
+// Импорт vue компонента
+import component from "./components/VueInfiniteScroll.vue";
 
-Vue.config.productionTip = false
+// Объявление функции установки, выполняемой Vue.use()
+export function install(Vue) {
+  if (install.installed) return;
+  install.installed = true;
+  Vue.component('VueInfiniteScroll', component);
+}
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+// Создание значения модуля для Vue.use()
+const plugin = {
+  install
+};
+
+// Автоматическая установка, когда vue найден (например в браузере с помощью тега <script>)
+let GlobalVue = null;
+if (typeof window !== 'undefined') {
+  GlobalVue = window.Vue;
+} else if (typeof global !== 'undefined') {
+  GlobalVue = global.Vue;
+}
+if (GlobalVue) {
+  GlobalVue.use(plugin);
+}
+
+// Экспорт компонента, для использования в качестве модуля (npm/webpack/etc.)
+export default component;
