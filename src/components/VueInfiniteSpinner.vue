@@ -1,8 +1,8 @@
 <template>
-  <div class="vue-infinite-scroll" :class="'vue-infinite-scroll_' + horizontalAlign">
+  <div class="vue-infinite-spinner" :class="'vue-infinite-spinner_' + horizontalAlign">
     <template v-if="!isLoadingDone">
       <slot name="spinner">
-        <svg class="vue-infinite-scroll__spinner" :style="spinnerStyle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <svg class="vue-infinite-spinner__spinner" :style="spinnerStyle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <g fill="none" fill-rule="evenodd">
             <path d="M0 0h24v24H0z"/>
             <path :stroke="spinnerColor" stroke-width="2" d="M12 3a9 9 0 1 0 6.3 2.573"/>
@@ -11,16 +11,16 @@
       </slot>
 
       <slot name="message">
-        <span class="vue-infinite-scroll__message"
-              :class="{'vue-infinite-scroll__message_mini': mini}">
+        <span class="vue-infinite-spinner__message"
+              :class="{'vue-infinite-spinner__message_mini': mini}">
           {{ message }} <span>.</span> <span>.</span> <span>.</span>
         </span>
       </slot>
     </template>
 
     <slot name="not-found" v-if="isLoadingDone && isNotFound">
-      <span class="vue-infinite-scroll__message"
-            :class="{'vue-infinite-scroll__message_mini': mini}">
+      <span class="vue-infinite-spinner__message"
+            :class="{'vue-infinite-spinner__message_mini': mini}">
         {{ messageNotFound }}
       </span>
     </slot>
@@ -29,7 +29,7 @@
 
 <script>
   export default {
-    name: 'VueInfiniteScroll',
+    name: 'VueInfiniteSpinner',
 
     props: {
       /**
@@ -212,30 +212,30 @@
 </script>
 
 <style lang="css">
-  .vue-infinite-scroll {
+  .vue-infinite-spinner {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
-  .vue-infinite-scroll_left {
+  .vue-infinite-spinner_left {
     margin-right: auto;
   }
 
-  .vue-infinite-scroll_right {
+  .vue-infinite-spinner_right {
     margin-left: auto;
   }
 
-  .vue-infinite-scroll_center {
+  .vue-infinite-spinner_center {
     margin-right: auto;
     margin-left: auto;
   }
 
-  .vue-infinite-scroll_mini {
+  .vue-infinite-spinner_mini {
     margin: 0;
   }
 
-  .vue-infinite-scroll__spinner {
+  .vue-infinite-spinner__spinner {
     width: 16px;
     margin-right: 8px;
     animation-name: spin;
@@ -244,12 +244,12 @@
     animation-timing-function: linear;
   }
 
-  .vue-infinite-scroll__message {
+  .vue-infinite-spinner__message {
     height: 13px;
     line-height: 16px;
   }
 
-  .vue-infinite-scroll__message span {
+  .vue-infinite-spinner__message span {
     margin-left: 1px;
     animation-name: dots;
     animation-duration: 750ms;
@@ -257,19 +257,19 @@
     animation-timing-function: linear;
   }
 
-  .vue-infinite-scroll__message span:nth-child(1) {
+  .vue-infinite-spinner__message span:nth-child(1) {
     animation-delay: 250ms;
   }
 
-  .vue-infinite-scroll__message span:nth-child(2) {
+  .vue-infinite-spinner__message span:nth-child(2) {
     animation-delay: 400ms;
   }
 
-  .vue-infinite-scroll__message span:nth-child(3) {
+  .vue-infinite-spinner__message span:nth-child(3) {
     animation-delay: 550ms;
   }
 
-  .vue-infinite-scroll__message_mini {
+  .vue-infinite-spinner__message_mini {
     font-style: italic;
     font-size: 11px;
     color: gray;

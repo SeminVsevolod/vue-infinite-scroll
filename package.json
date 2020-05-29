@@ -1,15 +1,15 @@
 {
-  "name": "vue-infinite-scroll",
+  "name": "vue-infinite-spinner",
   "version": "0.1.0",
   "author": {
     "name": "Semin Vsevolod"
   },
   "license": "MIT",
-  "main": "dist/vue-infinite-scroll.umd.js",
-  "module": "dist/vue-infinite-scroll.esm.js",
-  "unpkg": "dist/vue-infinite-scroll.min.js",
+  "main": "dist/vue-infinite-spinner.umd.js",
+  "module": "dist/vue-infinite-spinner.esm.js",
+  "unpkg": "dist/vue-infinite-spinner.min.js",
   "browser": {
-    "./sfc": "src/components/vue-infinite-scroll.vue"
+    "./sfc": "src/components/vue-infinite-spinner.vue"
   },
   "files": [
     "dist/*",
@@ -23,9 +23,9 @@
   },
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-infinite-scroll.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-infinite-scroll.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-infinite-scroll.min.js"
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-infinite-spinner.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-infinite-spinner.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-infinite-spinner.min.js"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",

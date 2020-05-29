@@ -1,11 +1,11 @@
 // Импорт vue компонента
-import component from "./components/VueInfiniteScroll.vue";
+import component from "./components/VueInfiniteSpinner.vue";
 
 // Объявление функции установки, выполняемой Vue.use()
 export function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('VueInfiniteScroll', component);
+  Vue.component('VueInfiniteSpinner', component);
 }
 
 // Создание значения модуля для Vue.use()
