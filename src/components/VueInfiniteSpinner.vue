@@ -13,7 +13,7 @@
       <slot name="message">
         <span class="vue-infinite-spinner__message"
               :class="{'vue-infinite-spinner__message_mini': mini}">
-          {{ message }} <span>.</span> <span>.</span> <span>.</span>
+          {{ message }} <span>.</span><span>.</span><span>.</span>
         </span>
       </slot>
     </template>
@@ -43,7 +43,7 @@
        * Сообщение, которое выводится если передан флаг "не найдено" (isNotFound = true)
        */
       messageNotFound: {
-        type: String, default: 'Data not found'
+        type: String, default: 'No items found'
       },
 
       /**
